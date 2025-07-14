@@ -15,7 +15,7 @@ class TurtleController(Node):
         self.declare_parameter("catch_closest_turtle", True)
         self.catch_closest_turtle = self.get_parameter("catch_closest_turtle").value
         self.target_turtle: Turtle = None
-        self.alive_turtles_subscriber = self.create_subscription(TurtleList, "alive_turtles", self.callback_alive_turtles, 10)
+        self.alive_turtles_subscriber = self.create_subscription(TurtleList, "moving_turtles", self.callback_alive_turtles, 10)
         self.pose_subscriber = self.create_subscription(Pose, "/turtle1/pose", self.pose_callback, 10)
         self.cmd_vel_publisher = self.create_publisher(Twist, "/turtle1/cmd_vel", 10)
         self.catch_turtle_client = self.create_client(CatchTurtle, "catch_turtle")

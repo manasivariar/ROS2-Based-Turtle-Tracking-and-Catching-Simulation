@@ -1,11 +1,11 @@
 #!usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from turtlesim.srv import Spawn, Kill
+from turtlesim.srv import Spawn, Kill, SetPen
 from my_robot_interfaces.msg import TurtleList, Turtle
 from my_robot_interfaces.srv import CatchTurtle
 from functools import partial
-from random import random
+from random import random, randint
 
 class TurtleSpawner(Node):
     def __init__(self):
@@ -19,9 +19,26 @@ class TurtleSpawner(Node):
         self.alive_turtles_publisher = self.create_publisher(TurtleList, "alive_turtles", 10)
         self.catch_turtle_service = self.create_service(CatchTurtle, "catch_turtle", self.catch_turtle_callback)
         self.kill_turtle_client = self.create_client(Kill, "/kill")
-        self.spawn_turtle_client = self.create_client(Spawn, "/spawn") 
+        self.spawn_turtle_client = self.create_client(Spawn, "/spawn")
+        self.set_pen_turtle_client = self.create_client(SetPen, "/turtle1/set_pen") 
         self.timer = self.create_timer(1.0/self.spawn_frequency, self.call_spawn_turtle)         
         self.get_logger().info("Turtle Spawner Node has been started")
+
+    def call_set_pen(self):
+        while not self.set_pen_turtle_client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().warn("SetPen service not available, waiting...")
+
+        request = SetPen.Request()
+        request.r = randint(0, 255)
+        request.g = randint(0, 255)
+        request.b = randint(0, 255)
+        request.width = 2
+        
+        future = self.set_pen_turtle_client.call_async(request)
+        future.add_done_callback(self.callback_set_pen)
+
+    def callback_set_pen(self, future):
+        response = future.result()
 
     def call_kill_turtle(self, turtle_name):
         while not self.kill_turtle_client.wait_for_service(timeout_sec=1.0):
@@ -39,6 +56,7 @@ class TurtleSpawner(Node):
     def catch_turtle_callback(self, request: CatchTurtle.Request, response: CatchTurtle.Response):
         turtle_name = request.name
         self.call_kill_turtle(turtle_name)
+        self.call_set_pen()
 
         #remove the killed turtle from the alive_turtles list
         self.alive_turtles = [t for t in self.alive_turtles if t.turtle_name != turtle_name]

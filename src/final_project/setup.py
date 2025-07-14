@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
             'turtle_controller = final_project.turtle_controller:main',
             'turtle_spawner = final_project.turtle_spawner:main',
+            'turtle_monitor = final_project.turtle_monitor:main',
         ],
     },
 )

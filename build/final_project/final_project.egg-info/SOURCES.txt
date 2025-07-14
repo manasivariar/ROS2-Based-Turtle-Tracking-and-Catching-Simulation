@@ -10,6 +10,7 @@ setup.py
 ../../build/final_project/final_project.egg-info/zip-safe
 final_project/__init__.py
 final_project/turtle_controller.py
+final_project/turtle_monitor.py
 final_project/turtle_spawner.py
 resource/final_project
 test/test_copyright.py
