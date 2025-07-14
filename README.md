@@ -7,10 +7,15 @@ After diving into the “ROS 2 for Beginners” course, I built a complete multi
 🔧 What did I build?
  An autonomous turtle (a ROS bot!) that chases down and "catches" other turtles using smart coordination between custom nodes, services, topics, and parameters - all visualized with Turtlesim. Every movement was controlled with velocity commands, service calls, and real-time decision-making. Think of it as a mini predator-prey simulator powered by ROS 2.
 🧠 What I leveled up:
+
  ✨ Mastered core ROS 2 concepts - nodes, topics, services, parameters, launch files
+ 
  ✨ Developed in Python
+ 
  ✨ Created custom interface files
+ 
  ✨ Built scalable architecture with launch files and YAML configs
+ 
  ✨ Gained practical experience designing robot behaviors from scratch
 
 Skills Gained: Control Systems, Robot Navigation, Robot Operating System (ROS), Autonomous Systems, Real-Time Systems and many more.
