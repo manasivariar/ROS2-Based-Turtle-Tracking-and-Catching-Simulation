@@ -1,0 +1,19 @@
+/robot_news_station_giskard:
+  ros__parameters:
+    message: "giskard"
+    
+/robot_news_station_bb8:
+  ros__parameters:
+    message: "bb8"
+
+/robot_news_station_daneel:
+  ros__parameters:
+    message: "daneel"
+
+/robot_news_station_jander:
+  ros__parameters:
+    message: "jander"
+
+/robot_news_station_c3po:
+  ros__parameters:
+    message: "c3po"

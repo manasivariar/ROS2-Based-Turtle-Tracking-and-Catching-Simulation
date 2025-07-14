@@ -1,0 +1,13 @@
+log/
+
+# Python caches
+**/__pycache__/
+**/*.py[cod]
+
+# Local ROS overlay
+.ros/
+
+# Virtual environments
+.env
+.venv
+

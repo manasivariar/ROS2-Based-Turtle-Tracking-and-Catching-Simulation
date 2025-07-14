@@ -1,0 +1,18 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/manasivariar/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages",
+        "/home/manasivariar/ros2_ws/install/final_project/lib/python3.12/site-packages",
+        "/home/manasivariar/ros2_ws/install/activity4/lib/python3.12/site-packages",
+        "/home/manasivariar/ros2_ws/install/my_robot_interfaces/lib/python3.12/site-packages",
+        "/home/manasivariar/ros2_ws/install/activity2/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/manasivariar/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages",
+        "/home/manasivariar/ros2_ws/install/final_project/lib/python3.12/site-packages",
+        "/home/manasivariar/ros2_ws/install/activity4/lib/python3.12/site-packages",
+        "/home/manasivariar/ros2_ws/install/my_robot_interfaces/lib/python3.12/site-packages",
+        "/home/manasivariar/ros2_ws/install/activity2/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ]
+}

@@ -1,0 +1,3 @@
+[console_scripts]
+battery = activity4.battery:main
+led_panel = activity4.led_panel:main

@@ -1,0 +1,76 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "my_robot_interfaces/msg/TurtleList",
+      "fields": [
+        {
+          "name": "turtle_list",
+          "type": {
+            "type_id": 145,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "my_robot_interfaces/msg/Turtle"
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "my_robot_interfaces/msg/Turtle",
+        "fields": [
+          {
+            "name": "turtle_name",
+            "type": {
+              "type_id": 17,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "x",
+            "type": {
+              "type_id": 11,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "y",
+            "type": {
+              "type_id": 11,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "theta",
+            "type": {
+              "type_id": 11,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "my_robot_interfaces/msg/TurtleList",
+      "hash_string": "RIHS01_0925a2efce0825ef353b1ef1e51502579e93286f15cb59f520fb1f35fca598dd"
+    },
+    {
+      "type_name": "my_robot_interfaces/msg/Turtle",
+      "hash_string": "RIHS01_a6d74f177f7e625a47ba1a4c77a08f965d2010e03718bf09ba4499671e628612"
+    }
+  ]
+}

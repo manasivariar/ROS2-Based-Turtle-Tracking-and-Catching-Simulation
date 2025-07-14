@@ -1,0 +1,28 @@
+from setuptools import find_packages, setup
+
+package_name = 'activity2'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=find_packages(exclude=['test']),
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='manasivariar',
+    maintainer_email='manasivariar@todo.todo',
+    description='TODO: Package description',
+    license='TODO: License declaration',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            "number_publisher = activity2.number_publisher:main",
+            "number_counter = activity2.number_counter:main",  
+            "reset_counter_client = activity2.reset_counter_client:main",
+        ],
+    },
+)
