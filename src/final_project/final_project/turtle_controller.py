@@ -7,6 +7,7 @@ from turtlesim.msg import Pose
 from geometry_msgs.msg import Twist
 from my_robot_interfaces.srv import CatchTurtle
 from my_robot_interfaces.msg import TurtleList, Turtle
+from turtlesim.srv import SetPen
 
 class TurtleController(Node):
     def __init__(self):
@@ -18,7 +19,7 @@ class TurtleController(Node):
         self.alive_turtles_subscriber = self.create_subscription(TurtleList, "moving_turtles", self.callback_alive_turtles, 10)
         self.pose_subscriber = self.create_subscription(Pose, "/turtle1/pose", self.pose_callback, 10)
         self.cmd_vel_publisher = self.create_publisher(Twist, "/turtle1/cmd_vel", 10)
-        self.catch_turtle_client = self.create_client(CatchTurtle, "catch_turtle")
+        self.catch_turtle_client = self.create_client(CatchTurtle, "catch_turtle") 
         self.timer = self.create_timer(0.01, self.move_turtle)
         self.get_logger().info("Turtle Controller Node has been started")
 
@@ -60,6 +61,7 @@ class TurtleController(Node):
         else:
             self.get_logger().error(f"Failed to catch turtle {request.name}: {response.message}")
 
+        
     def pose_callback(self, pose: Pose):
         self.pose = pose
     

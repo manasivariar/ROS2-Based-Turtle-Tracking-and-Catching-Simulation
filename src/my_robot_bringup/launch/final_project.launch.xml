@@ -6,5 +6,6 @@
     <node pkg="final_project" exec="turtle_spawner">
         <param from="$(find-pkg-share my_robot_bringup)/config/final_project.yaml"/>
     </node>
+    <node pkg="final_project" exec="turtle_monitor"/>
         
 </launch>
